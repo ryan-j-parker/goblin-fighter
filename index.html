@@ -23,16 +23,18 @@
 
     <main>
 
+        <section>
+            <div class="goblins-defeated">0 goblins have been defeated</div>
+        </section>
+        <section class="form-section">
         <form>
-            <input type="text" name="new-goblin-name" placeholder="Enter goblin name..." />
+            <input type="text" name="new-goblin-name" id="new-goblin-input" placeholder="Enter goblin name..." />
             <button id="new-goblin-btn">Add new goblin</button>
         </form>
-        <section>
-            <div class="goblins-defeated">0 slain goblins lie at your feet</div>
         </section>
-        <div class="game">
-            <section class="player-section">
+        <div class="game-container">
 
+            <section class="player-section">
                 <p class="player-hp">10</p>
                 <p class="player-avatar">🧙‍♂️</p>
             </section>
@@ -41,6 +43,7 @@
                 <div class="goblin-stable"></div>
             </section>
 
+            
 
         </div>
     </main>
