@@ -19,11 +19,22 @@ header {
     align-items: center;
     background-color: var(--header-background);
 }
-
+/*
 main {
     padding: 20px;
+    background: linear-gradient(105deg, rgba(0, 128, 0, 0.3), rgba(0, 0, 255, 0.3), rgba(255, 0, 0, 0.3), rgba(255, 255, 0, 0.3));
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas:
+        "defeated defeated input button"
+        "player player goblin1 goblin1"
+        "player player goblin1 goblin1"
+        "avatar avatar goblin2 goblin2"
+        "avatar avatar goblin2 goblin2"
+        " . . goblin3 goblin3"
+        " . . goblin3 goblin3";
 }
-
+**/
 footer {
     position: sticky;
     bottom: 0;
@@ -32,4 +43,110 @@ footer {
     display: flex;
     justify-content: flex-end;
     background-color: var(--footer-background);
+}
+
+.game {
+    display: flex;
+    justify-content: space-between;
+}
+
+.goblins-defeated {
+    width: 100%;
+    box-shadow: 2px 2px 18px -2px rgba(0, 0, 0, 65%);
+    background-color: rgba(255, 24, 24, 0.747);
+    padding: 25px;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.each-goblin {
+    padding: 30px;
+    background-color: gray;
+    margin: 10px;
+    width: 220px;
+    text-align: center;
+    box-shadow: 2px 2px 18px -2px rgba(0, 0, 0, 65%);
+}
+
+.each-goblin:hover {
+    transform: translateY(2px);
+}
+
+.player-section {
+    font-size: 4.5rem;
+    background-color: rgba(36, 49, 228, 0.534);
+    margin: 10px;
+    padding: 20px;
+    height: 300px;
+    width: 140px;
+    text-align: center;
+    box-shadow: 2px 2px 18px -2px rgba(0, 0, 0, 65%);
+}
+
+.player-section p {
+    margin: 0;
+}
+/*
+.goblins {
+    background-color: green;
+}
+
+#goblins-defeated {
+
+    grid-area: defeated;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: #ff0000;
+}
+
+#goblins-stable {
+    width: 100%;
+    height: 500px;
+    background-color: rgba(25, 77, 25, 0.733);
+    float: right;
+    clear: right;
+}
+
+.goblin {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px,
+        rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px,
+        rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-radius: 10%;
+    height: 100px;
+    width: 250px;
+    background-color: rgba(1, 248, 42, 0.404);
+    color: rgb(223, 94, 19);
+}
+
+#new-goblin-input,
+#new-goblin-btn {
+    border: none;
+    box-shadow:
+        rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+        rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    font-size: 1.4rem;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgba(255, 166, 0, 0.699);
+    cursor: pointer;
+}
+
+#player-avatar {
+    height: 300px;
+    width: 300px;
+}
+
+#new-goblin-input {
+    grid-area: input;
+}
+
+#new-goblin-btn {
+    grid-area: button;
 }
