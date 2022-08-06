@@ -8,7 +8,6 @@ const form = document.querySelector('form');
 
 const playerHPEl = document.querySelector('.player-hp');
 
-
 let goblins = [
     { name: 'Goblin 1', hp: 2, },
     { name: 'Goblin 2', hp: 3, },
@@ -86,11 +85,9 @@ function displayGoblins() {
 
                 playerHPEl.textContent = playerHP;
 
-
                 displayGoblins();
             }
         });
-
         goblinStableEl.append(goblinEl);
     }
 }
