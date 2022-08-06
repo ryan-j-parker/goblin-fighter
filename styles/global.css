@@ -7,7 +7,9 @@
 body {
     height: 100vh;
     font-family: 'Rubik', san-serif;
-    background: var(--background);
+    background-image: url(../assets/dungeon.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     display: grid;
     grid-template-rows: auto 1fr auto;
 }
@@ -20,10 +22,6 @@ header {
     background-color: var(--header-background);
 }
 
-main {
-    padding: 20px;
-}
-
 footer {
     position: sticky;
     bottom: 0;
@@ -32,4 +30,97 @@ footer {
     display: flex;
     justify-content: flex-end;
     background-color: var(--footer-background);
+}
+
+.game-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.goblins-defeated {
+    width: 100%;
+    box-shadow: 2px 2px 18px -2px rgba(0, 0, 0, 65%);
+    background-color: rgba(255, 24, 24, 0.747);
+    padding: 25px;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.form-section {
+    margin: 10px;
+    padding: 10px;
+    position: relative;
+}
+
+.goblins-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 40px;
+    padding: 10px;
+    float: right;
+    position: relative;
+}
+
+.goblins-stable {
+    position: relative;
+}
+
+#new-goblin-input,
+#new-goblin-btn {
+    border: none;
+    box-shadow:
+        rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+        rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    font-size: 1.4rem;
+    font-weight: 600;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgba(255, 166, 0, 0.8);
+    cursor: pointer;
+}
+
+
+.each-goblin {
+    font-size: 2rem;
+    padding: 30px;
+    background-color: rgba(1, 248, 42, 0.582);
+    margin: 10px;
+    width: 220px;
+    text-align: center;
+    box-shadow: 2px 2px 18px -2px rgba(0, 0, 0, 65%);
+    border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+}
+
+.each-goblin:hover {
+    transform: translateY(2px);
+}
+
+.player-section {
+    background-color: rgba(36, 49, 228, 0.644);
+    margin: 10px;
+    padding: 20px;
+    height: 300px;
+    width: 200px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 2px 2px 18px -2px rgba(0, 0, 0, 65%);
+    position: relative;
+}
+
+.player-avatar {
+    font-size: 7rem;
+}
+
+.player-hp {
+    font-size: 7rem;
+}
+
+.player-section p {
+    margin: 0;
 }

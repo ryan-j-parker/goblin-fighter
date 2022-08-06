@@ -17,12 +17,32 @@
 
 <body>
     <header>
-        <img src="/assets/html_css_js.png">
+        <img src="/assets/html_css_js.png" alt="">
         <h1>Web App</h1>
     </header>
 
     <main>
+        <section>
+            <div class="goblins-defeated">0 goblins have been defeated</div>
+        </section>
 
+        <section class="form-section">
+            <form>
+                <input type="text" name="new-goblin-name" id="new-goblin-input" placeholder="Enter goblin name..." />
+                <button id="new-goblin-btn" type="submit">Add new goblin</button>
+            </form>
+        </section>
+
+        <div class="game-container">
+            <section class="player-section">
+                <p class="player-hp">10</p>
+                <p class="player-avatar">🧙‍♂️</p>
+            </section>
+
+            <section class="goblins-section">
+                <div class="goblin-stable"></div>
+            </section>
+        </div>
     </main>
 
     <footer>&copy;2022 Software Developer</footer>
