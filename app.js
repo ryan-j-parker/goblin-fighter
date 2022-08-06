@@ -1,4 +1,5 @@
 import { renderGoblins } from './render-utils.js';
+
 const goblinStableEl = document.querySelector('.goblin-stable');
 const goblinsDefeatedEl = document.querySelector('.goblins-defeated');
 const playerAvatarEl = document.querySelector('.player-avatar');
@@ -38,7 +39,6 @@ form.addEventListener('submit', (e) => {
 function displayGoblins() {
 
     goblinStableEl.textContent = '';
-
     for (let goblin of goblins) {
 
         const goblinEl = renderGoblins(goblin);
