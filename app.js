@@ -9,9 +9,9 @@ const form = document.querySelector('form');
 const playerHPEl = document.querySelector('.player-hp');
 
 let goblins = [
-    { name: 'Goblin 1', hp: 2, },
-    { name: 'Goblin 2', hp: 3, },
-    { name: 'Goblin 3', hp: 4, },
+    { name: 'Eatskull', hp: 2, },
+    { name: 'Chewzit', hp: 3, },
+    { name: 'Warpain', hp: 4, },
 ];
 
 let playerHP = 10;
@@ -42,55 +42,47 @@ function displayGoblins() {
 
         const goblinEl = renderGoblins(goblin);
 
-        let emoji = '👺';
-        if (goblin.hp <= 0) {
-            emoji = '🔥';
-        }
+        goblinEl.textContent = `${goblin.name} ${(goblin.hp <= 0) ? '🔥' : '👺'} ${goblin.hp} HP`;
+        
+        if (goblin.hp > 0) {
+            goblinEl.addEventListener('click', () => {
 
-        goblinEl.textContent = `${goblin.name} ${emoji} ${goblin.hp} HP`;
+                if (goblin.hp > 0 && playerHP > 0) {
+                    if (Math.random() > 0.5) {
+                        goblin.hp--;
+                        alert('You hit the goblin!');
+                    } else {
+                        alert('You missed the goblin!');
+                    }
 
-        goblinEl.classList.add('each-goblin');
+                    if (Math.random() > 0.7) {
+                        playerHP--;
+                        alert('The goblin hit you!');
+                    }
 
+                    if (playerHP <= 0) {
+                        playerAvatarEl.textContent = '🤕';
+                        playerHPEl.textContent = playerHP;
+                        alert('You have been defeated!');
+                    }
 
-        goblinEl.addEventListener('click', () => {
+                    if (goblinsDefeated === goblins.length) {
+                        alert('You have defeated all the goblins!');
+                    }
 
-            if (goblin.hp > 0 && playerHP > 0) {
-                if (Math.random() > 0.5) {
-                    goblin.hp--;
-                    alert('You hit the goblin!');
-                } else {
-                    alert('You missed the goblin!');
-                }
+                    if (goblin.hp === 0) {
+                        goblinsDefeated++;
+                        goblinsDefeatedEl.textContent = `${goblinsDefeated} goblins have been defeated`;
+                    }
 
-                if (Math.random() > 0.7) {
-                    playerHP--;
-                    alert('The goblin hit you!');
-                }
-
-                if (goblin.hp <= 0) {
-                    goblinsDefeatedEl.textContent = `${goblinsDefeated} goblins have been defeated`;
-                    goblinsDefeated++;
-                    goblin.image = './assets/goblinOuch.jpg';
-                }
-
-                if (playerHP <= 0) {
-                    playerAvatarEl.textContent = '🤕';
                     playerHPEl.textContent = playerHP;
-                    alert('You have been defeated!');
+
+                    displayGoblins();
                 }
-
-                if (goblinsDefeated === goblins.length) {
-                    alert('You have defeated all the goblins!');
-                }
-
-                playerHPEl.textContent = playerHP;
-
-                displayGoblins();
-            }
-        });
+            });
+        }
         goblinStableEl.append(goblinEl);
     }
 }
 displayGoblins();
-
 
