@@ -7,7 +7,7 @@ export function renderGoblins(goblin) {
     const hpEl = document.createElement('p');
 
     goblinEl.textContent = `${goblin.name} ${goblin.hp} HP`;
-    goblinEl.classList.add('goblin');
+    goblinEl.classList.add('each-goblin');
     goblinEl.append(nameEl, hpEl);
     return goblinEl;
 }
